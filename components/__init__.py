@@ -1,4 +1,7 @@
 from .adder import Adder
+from .adder2 import HalfAdder
+from .adder2 import FullAdder
+from .adder2 import MultiAdder
 from .gates import And
 from .gates import Or
 from .gates import Xor

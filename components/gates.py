@@ -38,8 +38,6 @@ class And(Gate):
         return puzzle
 
 
-
-
 class Or(Gate):
     def __init__(self, *inputs):
         self.inputs = inputs
@@ -54,7 +52,6 @@ class Or(Gate):
         conversion = r'\operatorname{sign}\left(' +puzzle+ r'\right)'
 
         return [[0, conversion]] if as_lists else conversion
-
 
 
 class Xor(Gate):
@@ -93,5 +90,4 @@ class Not(Gate):
             return_statement = return_statement[1:len(return_statement)] if return_statement[0]=='+' else return_statement
 
         return return_statement
-
 
