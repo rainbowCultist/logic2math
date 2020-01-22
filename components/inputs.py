@@ -31,12 +31,12 @@ class Bit(Component):
     def compute(self):
         return self.value
 
-    def convert_python(self, as_list=False):
+    def convert_python(self, as_lists=False):
         return_statement = f'{self.name}//{2**self.position}%2'
 
-        return [return_statement] if as_list else return_statement
+        return [return_statement] if as_lists else return_statement
 
-    def convert_latex(self, as_list=False):
+    def convert_latex(self, as_lists=False):
         left = "{"
         right = "}"
         return_statement = f'\\operatorname{left}mod{right}\\left(\\operatorname{left}floor{right}\\left(\\frac{left}{self.name}{right}{left}{2**self.position}{right}\\right),2\\right)'
@@ -46,7 +46,7 @@ class Bit(Component):
                 f'\\operatorname{left}mod{right}\\left({self.name},2\\right)'
             )
 
-        return [return_statement] if as_list else return_statement
+        return [[0, return_statement]] if as_lists else return_statement
 
 
 class Input:
